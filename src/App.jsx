@@ -1,9 +1,10 @@
 import React from 'react';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
     <div className="App">
-      <h2>ilfl</h2>
+      <AboutUs />
     </div>
   );
 }
