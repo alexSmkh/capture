@@ -8,6 +8,11 @@ import home2 from '../img/home2.png';
 const ServicesSection = () => (
   <div className="services">
     <div className="description">
+      <h2>
+        High&nbsp;
+        <span>quality</span>
+        &nbsp;services
+      </h2>
       <div className="cards">
         <div className="card">
           <div className="icon">
