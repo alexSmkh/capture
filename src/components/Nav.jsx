@@ -1,23 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Nav = () => (
   <StyledNav>
     <h1>
-      <a href="#" id="logo">
+      <Link to="/" id="logo">
         Capture
-      </a>
+      </Link>
     </h1>
     <ul>
       <li>
-        <a href="#">About US</a>
+        <Link to="/">About US</Link>
       </li>
       <li>
-        <a href="#">Our Works</a>
+        <Link to="/work">Our Works</Link>
       </li>
       <li>
-        <a href="#">Contact Us</a>
+        <Link to="/contact">Contact Us</Link>
       </li>
     </ul>
   </StyledNav>
@@ -50,7 +51,7 @@ const StyledNav = styled.nav`
   #logo {
     font-size: 1.5rem;
     font-family: 'Lobster', cursive;
-    font-weight: lighter;  
+    font-weight: lighter;
   }
 `;
 
