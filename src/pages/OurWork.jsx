@@ -11,44 +11,54 @@ import {
   slider,
   sliderContainer,
 } from '../animation';
+import useScroll from '../components/useScroll';
 
 import athlete from '../img/athlete-small.png';
 import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 
-const OurWork = () => (
-  <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
-    <motion.div variants={sliderContainer}>
-      <Frame1 variants={slider} />
-      <Frame2 variants={slider} />
-      <Frame3 variants={slider} />
-      <Frame4 variants={slider} />
-    </motion.div>
-    <Movie>
-      <motion.h2 variants={fade}>The Athlete</motion.h2>
-      <motion.div className="line" variants={lineAnim} />
-      <Link to="/work/the-athlete">
-        <Hide>
-          <motion.img variants={photoAnim} src={athlete} alt="athlete" />
-        </Hide>
-      </Link>
-    </Movie>
-    <Movie>
-      <motion.h2>The racer</motion.h2>
-      <motion.div className="line" variants={lineAnim} />
-      <Link to="/work/the-racer">
-        <motion.img variants={photoAnim} src={theracer} alt="theracer" />
-      </Link>
-    </Movie>
-    <Movie>
-      <motion.h2>Good Times</motion.h2>
-      <motion.div className="line" variants={lineAnim} />
-      <Link to="/work/good-times">
-        <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
-      </Link>
-    </Movie>
-  </Work>
-);
+const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
+  return (
+    <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+      <motion.div variants={sliderContainer}>
+        <Frame1 variants={slider} />
+        <Frame2 variants={slider} />
+        <Frame3 variants={slider} />
+        <Frame4 variants={slider} />
+      </motion.div>
+      <Movie>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div className="line" variants={lineAnim} />
+        <Link to="/work/the-athlete">
+          <Hide>
+            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
+          </Hide>
+        </Link>
+      </Movie>
+      <Movie ref={element} variants={fade} initial="hidden" animate={controls}>
+        <motion.h2>The racer</motion.h2>
+        <motion.div className="line" variants={lineAnim} />
+        <Link to="/work/the-racer">
+          <img src={theracer} alt="theracer" />
+        </Link>
+      </Movie>
+      <Movie
+        ref={element2}
+        variants={fade}
+        initial="hidden"
+        animate={controls2}
+      >
+        <motion.h2>Good Times</motion.h2>
+        <motion.div className="line" variants={lineAnim} />
+        <Link to="/work/good-times">
+          <img src={goodtimes} alt="goodtimes" />
+        </Link>
+      </Movie>
+    </Work>
+  );
+};
 
 const Work = styled(motion.div)`
   min-height: 100vh;
@@ -61,7 +71,7 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
 
   .line {
