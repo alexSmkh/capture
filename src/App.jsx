@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
@@ -9,24 +10,27 @@ import Nav from './components/Nav';
 import MovieDetail from './pages/MovieDetail';
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <Switch>
-        <Route path="/" exact>
-          <AboutUs />
-        </Route>
-        <Route path="/contact">
-          <ContactUs />
-        </Route>
-        <Route path="/work" exact>
-          <OurWork />
-        </Route>
-        <Route path="/work/:id">
-          <MovieDetail />
-        </Route>
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <AboutUs />
+          </Route>
+          <Route path="/contact">
+            <ContactUs />
+          </Route>
+          <Route path="/work" exact>
+            <OurWork />
+          </Route>
+          <Route path="/work/:id">
+            <MovieDetail />
+          </Route>
+        </Switch>
+      </AnimatePresence>
     </div>
   );
 }
