@@ -35,7 +35,11 @@ const AboutSection = () => (
       </motion.button>
     </Description>
     <Image>
-      <motion.img src={home1} variants={photoAnim} alt="photographer" />
+      <motion.img
+        src={home1}
+        variants={photoAnim}
+        alt="photographer"
+      />
     </Image>
     <Wave />
   </About>
