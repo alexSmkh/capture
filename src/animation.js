@@ -98,3 +98,20 @@ export const sliderContainer = {
     transition: { staggerChildren: 0.1, ease: 'easeOut' },
   },
 };
+
+export const answerAnim = {
+  hidden: {
+    opacity: 0,
+    x: '-100%',
+    scale: 0.8,
+  },
+  show: {
+    opacity: 1,
+    x: '0%',
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
