@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
 
+import { pageAnimation } from '../animation';
+import ScrollTop from '../components/ScrollTop';
 import movieState from '../movieState';
 
 const Award = ({ title, description }) => (
@@ -51,6 +52,7 @@ const MovieDetail = () => {
           <ImageDisplay>
             <img src={movie.secondaryImg} alt="movie" />
           </ImageDisplay>
+          <ScrollTop />
         </Details>
       )}
       ;

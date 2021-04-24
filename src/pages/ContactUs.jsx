@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import {
   pageAnimation, titleAnim, lineAnim, iconAnim,
 } from '../animation';
+import ScrollTop from '../components/ScrollTop';
+
 import twitterLogo from '../img/twitter-logo.svg';
 import fbLogo from '../img/facebook-logo.svg';
 import gmailLogo from '../img/gmail-logo.svg';
@@ -64,6 +66,7 @@ function ContactUs() {
           </Social>
         </Hide>
       </div>
+      <ScrollTop />
     </StyledContact>
   );
 }
