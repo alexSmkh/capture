@@ -1,28 +1,49 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Nav = () => (
-  <StyledNav>
-    <h1>
-      <Link to="/" id="logo">
-        Capture
-      </Link>
-    </h1>
-    <ul>
-      <li>
-        <Link to="/">About US</Link>
-      </li>
-      <li>
-        <Link to="/work">Our Works</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact Us</Link>
-      </li>
-    </ul>
-  </StyledNav>
-);
+import { lineAnim } from '../animation';
+
+const Nav = () => {
+  const { pathname } = useLocation();
+  return (
+    <StyledNav>
+      <h1>
+        <Link to="/" id="logo">
+          Capture
+        </Link>
+      </h1>
+      <ul>
+        <li>
+          <Link to="/">About US</Link>
+          <Line
+            variants={lineAnim}
+            initial="hidden"
+            animate={pathname === '/' ? 'show' : 'hidden'}
+          />
+        </li>
+        <li>
+          <Link to="/work">Our Works</Link>
+          <Line
+            variants={lineAnim}
+            initial="hidden"
+            animate={pathname === '/work' ? 'show' : 'hidden'}
+          />
+        </li>
+        <li>
+          <Link to="/contact">Contact Us</Link>
+          <Line
+            variants={lineAnim}
+            initial="hidden"
+            animate={pathname === '/contact' ? 'show' : 'hidden'}
+          />
+        </li>
+      </ul>
+    </StyledNav>
+  );
+};
 
 const StyledNav = styled.nav`
   height: 10vh;
@@ -85,6 +106,16 @@ const StyledNav = styled.nav`
       justify-content: space-around;
     }
   }
+`;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background-color: #23d997;
+  width: 0%;
+  margin-top: 0.5rem;
+  /* position: absolute;
+  bottom: -80%;
+  left: 60%; */
 `;
 
 export default Nav;
