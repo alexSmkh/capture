@@ -15,12 +15,12 @@ export default () => [
       {
         title: 'Truly A masterpiece',
         description:
-          '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
+          '“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam magni nam doloribus. Corrupti magni illum consequatur ipsum fugit expedita id, odio reiciendis. Doloremque alias explicabo voluptatibus quas laboriosam mollitia neque!”',
       },
       {
         title: 'Fresh look on a brutal sport.',
         description:
-          '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
+          '“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam magni nam doloribus. Corrupti magni illum consequatur ipsum fugit expedita id, odio reiciendis.”',
       },
       {
         title: 'It’s okay lmao.',
