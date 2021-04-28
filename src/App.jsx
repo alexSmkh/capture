@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import styled from 'styled-components';
 
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
@@ -12,7 +13,7 @@ import MovieDetail from './pages/MovieDetail';
 function App() {
   const location = useLocation();
   return (
-    <div className="App">
+    <StyledApp className="App">
       <GlobalStyle />
       <Nav />
       <AnimatePresence exitBeforeEnter>
@@ -31,8 +32,12 @@ function App() {
           </Route>
         </Switch>
       </AnimatePresence>
-    </div>
+    </StyledApp>
   );
 }
+
+const StyledApp = styled.div`
+  overflow-x: hidden;
+`;
 
 export default App;

@@ -62,6 +62,11 @@ const MovieDetail = () => {
 
 const Details = styled(motion.div)`
   color: white;
+  margin-top: 10vh;
+
+  @media (max-width: 1300px) {
+    padding: 1rem;
+  }
 `;
 
 const HeadLine = styled.div`
@@ -81,18 +86,45 @@ const HeadLine = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+
+  @media (max-width: 1300px) {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 3rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
 `;
 
 const Awards = styled.div`
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
-  margin: 5rem 10rem;
+  margin: 2rem 10rem;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 630px) {
+    flex-direction: column;
+    margin: 5rem 5rem;
+  }
 `;
 
 const StyledAward = styled.div`
-  padding: 5rem;
+  padding: 5rem 3rem;
 
   h3 {
     font-size: 2rem;
@@ -108,6 +140,14 @@ const StyledAward = styled.div`
   p {
     padding: 2rem 0rem;
   }
+
+  @media (max-width: 800px) {
+    padding: 3rem;
+  }
+
+  @media (max-width: 630px) {
+    padding: 1rem;
+  }
 `;
 
 const ImageDisplay = styled.div`
@@ -115,7 +155,8 @@ const ImageDisplay = styled.div`
 
   img {
     width: 100%;
-    height: 100vh;
+    height: 85vh;
+    /* margin-top: 1rem; */
     object-fit: cover;
   }
 `;

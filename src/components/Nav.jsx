@@ -25,16 +25,17 @@ const Nav = () => (
 );
 
 const StyledNav = styled.nav`
-  min-height: 10vh;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
   padding: 1rem 10rem;
   background-color: #282828;
-  position: sticky;
-  top: 0;
   z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
 
   a {
     text-decoration: none;
@@ -55,6 +56,34 @@ const StyledNav = styled.nav`
     font-size: 1.5rem;
     font-family: 'Lobster', cursive;
     font-weight: lighter;
+  }
+
+  @media (max-width: 1300px) {
+    height: 10vh;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem 0;
+
+    #logo {
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-bottom: 0.5rem;
+      justify-content: space-around;
+      width: 100%;
+
+      li {
+        padding-left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    ul {
+      justify-content: space-around;
+    }
   }
 `;
 

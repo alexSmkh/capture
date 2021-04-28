@@ -30,31 +30,31 @@ const ServicesSection = () => {
         </h2>
         <Cards>
           <Card>
-            <div className="icon">
+            <Icon>
               <img src={clock} alt="clock" />
               <h3>Efficient</h3>
-            </div>
+            </Icon>
             <p>Lorem ipsum dolor sit amet.</p>
           </Card>
           <Card>
-            <div className="icon">
+            <Icon>
               <img src={teamwork} alt="teamwork" />
               <h3>Teamwork</h3>
-            </div>
+            </Icon>
             <p>Lorem ipsum dolor sit amet.</p>
           </Card>
           <Card>
-            <div className="icon">
+            <Icon>
               <img src={diaphragm} alt="diaphragm" />
               <h3>Diaphragm</h3>
-            </div>
+            </Icon>
             <p>Lorem ipsum dolor sit amet.</p>
           </Card>
           <Card>
-            <div className="icon">
+            <Icon>
               <img src={money} alt="money" />
               <h3>Affordable</h3>
-            </div>
+            </Icon>
             <p>Lorem ipsum dolor sit amet.</p>
           </Card>
         </Cards>
@@ -80,20 +80,35 @@ const Services = styled(About)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`
   flex-basis: 20rem;
-  .icon {
-    display: flex;
-    align-items: center;
 
-    h3 {
-      margin-left: 1rem;
-      background: white;
-      color: black;
-      padding: 1rem;
-    }
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 550px) {
+  }
+`;
+
+const Icon = styled.div`
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin-left: 1rem;
+    background: white;
+    color: black;
+    padding: 1rem;
   }
 `;
 

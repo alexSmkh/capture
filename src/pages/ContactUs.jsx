@@ -72,16 +72,34 @@ function ContactUs() {
 }
 
 const StyledContact = styled(motion.div)`
+  margin-top: 10vh;
   padding: 5rem 10rem;
   color: white;
   height: 90vh;
-  background: url(${photographer}) no-repeat;
+  background-image: url(${photographer});
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+
+  @media (max-width: 1300px) {
+    padding: 2rem;
+    font-size: 1rem;
+  }
 `;
 
 const Title = styled.div`
   margin-bottom: 4rem;
   color: white;
+
+  @media (max-width: 1300px) {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
 `;
 
 const Hide = styled.div`
@@ -116,11 +134,20 @@ const Line = styled(motion.div)`
   background-color: #23d997;
   margin-bottom: 3rem;
   max-width: 50%;
+
+  @media (max-width: 1300px) {
+    max-width: 70%;
+    margin-bottom: 2rem; 
+  }
 `;
 
 const Link = styled(motion.a)`
   text-decoration: none;
   font-size: 4rem;
   color: white;
+
+  @media (max-width: 1300px) {
+    font-size: 2rem;
+  }
 `;
 export default ContactUs;

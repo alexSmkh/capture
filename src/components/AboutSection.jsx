@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -11,7 +12,7 @@ import { titleAnim, fade, photoAnim } from '../animation';
 const AboutSection = () => (
   <About>
     <Description>
-      <div className="title">
+      <motion.div className="title">
         <Hide>
           <motion.h2 variants={titleAnim}>We work to make</motion.h2>
         </Hide>
@@ -25,7 +26,7 @@ const AboutSection = () => (
         <Hide>
           <motion.h2 variants={titleAnim}>true.</motion.h2>
         </Hide>
-      </div>
+      </motion.div>
       <motion.p variants={fade}>
         Contact us for any photography or videography ideas that you have. We
         have professionals with amazing skills to help you achieve it.
@@ -35,11 +36,7 @@ const AboutSection = () => (
       </motion.button>
     </Description>
     <Image>
-      <motion.img
-        src={home1}
-        variants={photoAnim}
-        alt="photographer"
-      />
+      <motion.img src={home1} variants={photoAnim} alt="photographer" />
     </Image>
     <Wave />
   </About>

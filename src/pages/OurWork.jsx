@@ -63,6 +63,7 @@ const OurWork = () => {
 };
 
 const Work = styled(motion.div)`
+  margin-top: 10vh;
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
@@ -70,6 +71,14 @@ const Work = styled(motion.div)`
 
   h2 {
     padding: 1rem 0rem;
+  }
+
+  @media (max-width: 1300px) {
+    padding: 1rem;
+
+    h2 {
+      font-size: 3rem;
+    }
   }
 `;
 
